@@ -1,0 +1,29 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="css/style.css")
+    link(rel="stylesheet", href="css/dashboard.css")
+    title Dashboard 
+  body
+    nav.navbar
+      div.logo
+        span
+          a(href="#") VirtuBell
+      ul.nav-list
+        li 
+          a(href="/qrcode") Your QR code here
+        li
+          a(href="/logout") Logout
+
+
+
+
+    .container
+      h1 Welcome to Your Dashboard
+      p Hello, #{user.firstname} #{user.lastname}!
+      // Display user-specific dashboard content here
+
+    footer
+      p Copyright © 2023 My Website

@@ -1,0 +1,26 @@
+// contact-owner.pug
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="css/style.css")
+    title Contact QR Code Owner
+  body
+    nav.navbar
+      div.logo
+        span
+          a(href="#") VirtuBell
+
+    main.container
+      h1 Contact QR Code Owner
+      p Email: #{email}
+      form(action="/contact/:email", method="post")
+        label(for="name") Your Name:
+        input(type="text", id="name", name="name", required)
+        label(for="message") Your Message:
+        textarea(id="message", name="message", required)
+        button(type="submit") Send Message
+
+    footer
+      p Copyright © 2023 My Website

@@ -1,0 +1,70 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="css/style.css")
+    title Admin Dashboard
+
+  body
+    nav.navbar
+      div.logo
+        span
+          a(href="#") VirtuBell
+      ul.nav-list
+        li
+          a(href="/admin/dashboard") Dashboard
+        li
+          a(href="/admin/users") Users
+        li
+          a(href="/admin/logout") Logout
+
+    main.container
+      h1 Admin Dashboard
+      table
+        thead
+          tr
+            th First Name
+            th Last Name
+            th Email
+            th Actions
+        tbody
+          each user in users
+            tr
+              td #{user.firstname}
+              td #{user.lastname}
+              td #{user.email}
+              td
+                button.delete-user-button(data-user-id=user.email) Delete User
+
+    footer
+      p Copyright © 2023 My Website
+
+  script.
+    document.addEventListener('click', (e) => {
+      if (e.target.classList.contains('delete-user-button')) {
+        const userIdToDelete = e.target.getAttribute('data-user-id');
+        if (userIdToDelete) {
+          // Send an Ajax request to delete the user
+          fetch('/admin/deleteUser', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email: userIdToDelete }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.success) {
+                // Remove the user row from the table on successful deletion
+                e.target.parentElement.parentElement.remove();
+              } else {
+                console.error('User deletion failed');
+              }
+            })
+            .catch((error) => {
+              console.error('Error:', error);
+            });
+        }
+      }
+    });

@@ -1,0 +1,71 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="/css/styleReg.css")
+    link(rel="stylesheet", href="/css/style.css")
+    title Sign In
+  body
+    nav.navbar
+      div.logo
+        span
+          a(href="/") VirtuBell
+      ul.nav-list
+        li
+          a(href="/") Home
+        li
+          a(href="#") About
+        li
+          a(href="/contact") Contact
+        li
+          a(href="/login") Login/Register
+    div.form-container
+      form.form(action="/login", method="post") 
+        p.title Login Now!
+        p.message Login now and get full access to our services.
+        
+        // Display success message if it exists
+        if (successMessage)
+          p.successMessage= successMessage
+        
+        // Display error message if it exists
+        if (errorMessage)
+          p.errorMessage= errorMessage
+        
+        label
+          input(type="email", placeholder="", class="input", name="email", required)
+          span Email
+        label
+          input(type="password", placeholder="", class="input", name="password", required)
+          span Password
+        button.submit(type="submit", value="Login") Submit
+        p.signin Don't have an account ? 
+          a(href="/register") Sign Up!
+
+  script.
+    // Get references to form elements
+    const loginForm = document.querySelector('.form');
+    const emailInput = document.querySelector('input[name="email"]');
+    const passwordInput = document.querySelector('input[name="password"]');
+    
+    // Event listener for form submission
+    loginForm.addEventListener('submit', function(event) {
+        // Prevent the form from submitting if validation fails
+        if (!validateForm()) {
+            event.preventDefault();
+        }
+    });
+
+    // Function to validate the form
+    function validateForm() {
+        // Simple validation for demonstration purposes
+        const email = emailInput.value.trim();
+        const password = passwordInput.value;
+
+        if (email === '' || password === '') {
+            alert('Please fill in all fields.');
+            return false; // Prevent form submission
+        }
+        return true; // Allow form submission
+    }

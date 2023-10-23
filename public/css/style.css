@@ -1,0 +1,122 @@
+/* Import Bootstrap CSS */
+@import url("/css/bootstrap.css");
+
+/* Reset default margin and padding */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+/* Style the navbar container */
+.navbar {
+  border-radius: 30px; /* Add rounded edges */
+  overflow: hidden; /* Ensure rounded corners display correctly */
+  height: auto;
+  align-items: center;
+  box-shadow: 0 3px 4px white;
+}
+
+/* Style the navigation list */
+.nav-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Style the list items */
+.nav-list li {
+  margin: 1px;
+}
+
+/* Style the links */
+.nav-list li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px; /* Add rounded edges to links */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+/* Change link background color on hover */
+.nav-list li a:hover {
+  background-color: royalblue;
+}
+
+.logo a {
+  color: white;
+  border-radius: 30px; /* Add rounded edges */
+  overflow: hidden; /* Ensure rounded corners display correctly */
+  height: 35px;
+  width: 100px;
+  text-align: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+/* Content */
+#content-index {
+  padding-top: 10%;
+  color: white;
+}
+
+#content-index .p1 {
+  padding-top: 5%;
+  font-size: 16px;
+  letter-spacing: 2px;
+  width: 60% !important;
+}
+
+#content-index h3 {
+  font-family: "HelveticaNeueLTPro-BdCn";
+  font-weight: bolder;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+#content-index .p2 {
+  padding-top: 5px;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+/* Admin Dashboard Styles */
+#admin-content {
+  padding: 20px;
+  background-color: #fff;
+  margin: 20px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+.admin-options {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.option {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: royalblue;
+}
+
+

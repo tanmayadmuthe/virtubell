@@ -1,0 +1,14 @@
+body{
+    color: white;
+}
+
+
+footer {
+    background-color: #111111;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }

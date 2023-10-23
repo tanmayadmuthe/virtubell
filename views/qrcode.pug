@@ -1,0 +1,27 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="css/style.css")
+    link(rel="stylesheet", href="css/dashboard.css")
+    title Dashboard 
+  body
+    nav.navbar
+      div.logo
+        span
+          a(href="#") VirtuBell
+      ul.nav-list
+        li 
+          a(href="/dashboard") Dashboard
+        li 
+          a(href="/qrcode") Your QR code here
+        li
+          a(href="/logout") Logout
+
+    main.container
+      h1 Your QR Code
+      img(src=`https://api.qrserver.com/v1/create-qr-code/?data=mailto:${user.email}&size=200x200`, alt="QR Code")
+
+    footer
+      p Copyright © 2023 My Website
